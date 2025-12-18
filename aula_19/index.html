@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #0f0;
+            text-align: center;
+            padding-top: 60px;
+        }
+        #relogio{
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="relogio"></p>
+
+    <script>
+        function atualizarRelogio(){
+            const diasSemana = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+            const meses = ["janeiro","fevereiro","março","abril","maio","junho",
+                           "julho","agosto","setembro","outubro","novembro","dezembro"];
+
+            let agora = new Date();
+
+            let semana = diasSemana[agora.getDay()];
+            let dia = agora.getDate();
+            let mes = meses[agora.getMonth()];
+            let ano = agora.getFullYear();
+
+            let h = agora.getHours().toString().padStart(2,"0");
+            let m = agora.getMinutes().toString().padStart(2,"0");
+            let s = agora.getSeconds().toString().padStart(2,"0");
+
+            document.getElementById("relogio").innerHTML =
+                `${semana}, ${dia} de ${mes} de ${ano} - ${h}:${m}:${s}`;
+        }
+
+        // Atualiza imediatamente e a cada segundo
+        atualizarRelogio();
+        setInterval(atualizarRelogio, 1000);
+    </script>
+
+</body>
+</html>

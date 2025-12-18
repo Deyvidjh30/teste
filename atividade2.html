@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>lista de nomes</title>
+</head>
+<body>
+
+<label>Nome:</label>
+<input id="nomeInput">
+<button id="btnAdd">Adicionar</button>
+
+<p id="textoLista"></p>
+
+<script>
+let lista = ["Ana","Bruno","Carlos"]
+
+function mostrarLista(){
+    document.getElementById("textoLista").innerHTML = lista.join("<br>")
+}
+
+mostrarLista()
+
+document.getElementById("btnAdd").onclick = function(){
+    let nome = document.getElementById("nomeInput").value
+
+    if(nome != ""){
+        lista.push(nome)
+        mostrarLista()
+        document.getElementById("nomeInput").value = ""
+    }
+}
+</script>
+
+</body>
+</html>

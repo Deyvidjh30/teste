@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Senhas</title>
+</head>
+<body>
+
+    <form>
+        <label>Senha:</label>
+        <input type="text" id="senha">
+        <br>
+        <label>Confirmação de senha:</label>
+        <input type="text" id="confirmar_senha">
+        <button type="button" onclick="verificar()">Verificar senhas</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar() {
+            let senha = document.getElementById("senha").value;
+            let confirmar_senha = document.getElementById("confirmar_senha").value;
+            let resultado = document.getElementById("resultado");
+
+            if (senha === confirmar_senha  && senha !== "") {
+                resultado.innerHTML = "Iguais";
+            } else {
+                resultado.innerHTML = "Diferentes";
+            }
+        }
+    </script>
+</body>
+</html>

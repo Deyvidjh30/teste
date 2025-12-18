@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tela1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    input {
+      padding: 8px;
+      width: 250px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 8px 12px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+    .resultado p {
+      margin: 5px 0 ;
+   
+    }
+    
+  </style>
+</head>
+<body>
+  <input type="text" id="texto" placeholder="Digite algo...">
+  <button onclick="mostrarTexto()">Mostrar</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function mostrarTexto() {
+      const texto = document.getElementById("texto").value;
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `
+        <p style="font-size:1rem">${texto}</p>
+        <p style="font-size:2rem">${texto}</p>
+        <p style="font-size:3rem">${texto}</p>
+        <p style="font-size:4rem">${texto}</p>
+        <p style="font-size:5rem">${texto}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
